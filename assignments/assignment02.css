@@ -36,6 +36,18 @@ p.classy {
 	margin-left: 10px;
 }
 
+img.cat {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}
+
+img.dog {
+	position: absolute;
+	left: 50px;
+	top: 150px;
+}
+
 /* external css is imported into html using the <link> tag in the <head> section, as shown below.
 
   <head>
