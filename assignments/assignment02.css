@@ -57,6 +57,16 @@ div#positionMe{
 	position:relative;
 }
 
+nav{
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	padding: 5px;
+	background-color: #17F909;
+	opacity:0.9;
+	font-size:20px
+}
+
 /* external css is imported into html using the <link> tag in the <head> section, as shown below.
 
   <head>
