@@ -112,13 +112,12 @@ $(document).ready(function(){
 	}
 	
 	function subtract1 (elem) {
-	  if(elem.children[2].innerHTML = 1) {
+	  if(elem.children[2].innerHTML = 1)
 		  elem.children[2].innerHTML = "-";
-	  } else if(elem.children[2].innerHTML > 1) {
+	  else if(elem.children[2].innerHTML > 1)
 		let currentScore = elem.children[2].innerHTML;
 		currentScore = Number.parseInt(currentScore);
 		elem.children[2].innerHTML = currentScore - 1;
-	  }
 	}
 	
 	elem[1]
