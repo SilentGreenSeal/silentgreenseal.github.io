@@ -17,13 +17,13 @@ $( document ).ready(function() {
 	}
 
 	// create an "add1" function
-	function add1 (elem) {
-	  if(elem.children[2].innerHTML == "-") 
-		elem.children[2].innerHTML = "1";
+	function add1 (ord) {
+	  if(elem[ord].children[2].innerHTML == "-") 
+		elem[ord].children[2].innerHTML = "1";
 	  else {
-		let currentScore = elem.children[2].innerHTML;
+		let currentScore = elem[ord].children[2].innerHTML;
 		currentScore = Number.parseInt(currentScore);
-		elem.children[2].innerHTML = currentScore + 1;
+		elem[ord].children[2].innerHTML = currentScore + 1;
 	  }
 	}
 });
