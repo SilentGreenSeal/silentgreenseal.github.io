@@ -13,7 +13,7 @@ $( document ).ready(function() {
 
 	// assign a function to the + button
 	elem[i].children[4].children[0].onclick 
-	  = function(){add1(elem[i]);};
+	  = function(){add1(this);};
 	}
 
 	// create an "add1" function
