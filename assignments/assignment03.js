@@ -21,6 +21,8 @@ $(document).ready(function(){
 	  = function(){add1(elem[3]);};
 	  */
 
+});
+
 	// create an "add1" function
 	function add1 (elem) {
 	  if(elem.children[2].innerHTML == "-") 
@@ -31,4 +33,3 @@ $(document).ready(function(){
 		elem.children[2].innerHTML = currentScore + 1;
 	  }
 	}
-});
