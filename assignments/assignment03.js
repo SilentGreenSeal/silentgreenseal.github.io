@@ -18,7 +18,7 @@ $( document ).ready(function() {
 
 	// create an "add1" function
 	function add1 (el) {
-		el = el.parent.parent;
+		el = el.parent;
 	  if(el.children[2].innerHTML == "-") 
 		el.children[2].innerHTML = "1";
 	  else {
