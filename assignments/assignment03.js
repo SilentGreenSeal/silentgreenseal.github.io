@@ -1,5 +1,18 @@
 $( document ).ready(function() {
 
+	$(".btn.btn-success").click(function(){
+		var obj = $(this);
+		var tr = obj.parent.parent;
+		
+		if(tr.children[2].innerHTML == "-") 
+			tr.children[2].innerHTML = "1";
+		  else {
+			let currentScore = tr.children[2].innerHTML;
+			currentScore = Number.parseInt(currentScore);
+			tr.children[2].innerHTML = currentScore + 1;
+		  }
+	});
+	/*
 	let elem = [];
 	for(var i=0;i<18;i++){
 		var row = (i+1) + '';
@@ -27,5 +40,6 @@ $( document ).ready(function() {
 		  }
 		}
 	}
+	*/
 	
 });
