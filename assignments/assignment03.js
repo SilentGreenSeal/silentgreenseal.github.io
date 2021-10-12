@@ -13,12 +13,11 @@ $( document ).ready(function() {
 
 	// assign a function to the + button
 	elem[i].children[4].children[0].onclick 
-	  = function(){add1(this);};
+	  = function(){add1(elem[i]);};
 	}
 
 	// create an "add1" function
 	function add1 (el) {
-		el = el.parent;
 	  if(el.children[2].innerHTML == "-") 
 		el.children[2].innerHTML = "1";
 	  else {
