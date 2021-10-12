@@ -5,7 +5,7 @@ $( document ).ready(function() {
 		// assign the entire table row for hole 1 to a variable, elem
 		elem[i]
 		  = document.getElementById(i+1);
-		elem[i].children[4].children[0].attr("ord",i+1);
+		elem[i].children[4].children[0].prop("ord",i+1);
 
 		// display the number of children (all td elements)
 		// console.log(elem.children.length);
@@ -19,7 +19,7 @@ $( document ).ready(function() {
 
 	// create an "add1" function
 	function add1 (el) {
-	  var ord = el.attr("ord");
+	  var ord = el.prop("ord");
 	  var tr = document.getElementById(ord)
 	  if(tr.children[2].innerHTML == "-") 
 		tr.children[2].innerHTML = "1";
