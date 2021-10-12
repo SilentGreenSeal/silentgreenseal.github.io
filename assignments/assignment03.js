@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
 	let elem = [];
-	for(var i=1;i++;i<=18){
+	for(var i=1;i<=18;i++){
 	// assign the entire table row for hole 1 to a variable, elem
 	elem[i-1]
 	  = document.getElementById(i);
