@@ -2,7 +2,7 @@ $( document ).ready(function() {
 
 	$(".btn.btn-success").click(function(){
 		var obj = $(this);
-		var tr = obj.parent.parent;
+		var tr = obj.parent().parent();
 		
 		if(tr.children[2].innerHTML == "-") 
 			tr.children[2].innerHTML = "1";
