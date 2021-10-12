@@ -2,10 +2,10 @@ $( document ).ready(function() {
 
 	let elem = [];
 	for(var i=0;i<18;i++){
+		var row = (i+1) + '';
 		// assign the entire table row for hole 1 to a variable, elem
 		elem[i]
-		  = document.getElementById(i+1);
-		elem[i].children[4].children[0].prop("ord",i+1);
+		  = document.getElementById(row);
 
 		// display the number of children (all td elements)
 		// console.log(elem.children.length);
@@ -14,19 +14,18 @@ $( document ).ready(function() {
 
 		// assign a function to the + button
 		elem[i].children[4].children[0].onclick 
-		  = function(){add1(this);};
-	}
+		  = function(){add1(elem[i]);};
 
-	// create an "add1" function
-	function add1 (el) {
-	  var ord = el.prop("ord");
-	  var tr = document.getElementById(ord)
-	  if(tr.children[2].innerHTML == "-") 
-		tr.children[2].innerHTML = "1";
-	  else {
-		let currentScore = tr.children[2].innerHTML;
-		currentScore = Number.parseInt(currentScore);
-		tr.children[2].innerHTML = currentScore + 1;
-	  }
+		// create an "add1" function
+		function add1 (elem) {
+		  if(elem.children[2].innerHTML == "-") 
+			elem.children[2].innerHTML = "1";
+		  else {
+			let currentScore = elem.children[2].innerHTML;
+			currentScore = Number.parseInt(currentScore);
+			elem.children[2].innerHTML = currentScore + 1;
+		  }
+		}
 	}
+	
 });
