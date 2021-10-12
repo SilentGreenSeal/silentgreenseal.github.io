@@ -13,17 +13,17 @@ $( document ).ready(function() {
 
 	// assign a function to the + button
 	elem[i].children[4].children[0].onclick 
-	  = function(){add1(i);};
+	  = function(){add1(elem[i]);};
 	}
 
 	// create an "add1" function
-	function add1 (ord) {
-	  if(elem[ord].children[2].innerHTML == "-") 
-		elem[ord].children[2].innerHTML = "1";
+	function add1 (el) {
+	  if(el.children[2].innerHTML == "-") 
+		el.children[2].innerHTML = "1";
 	  else {
-		let currentScore = elem[ord].children[2].innerHTML;
+		let currentScore = el.children[2].innerHTML;
 		currentScore = Number.parseInt(currentScore);
-		elem[ord].children[2].innerHTML = currentScore + 1;
+		el.children[2].innerHTML = currentScore + 1;
 	  }
 	}
 });
