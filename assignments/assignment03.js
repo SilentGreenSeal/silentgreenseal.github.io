@@ -5,6 +5,7 @@ $( document ).ready(function() {
 		// assign the entire table row for hole 1 to a variable, elem
 		elem[i]
 		  = document.getElementById(i+1);
+		elem[i].attr("ord",i+1);
 
 		// display the number of children (all td elements)
 		// console.log(elem.children.length);
@@ -13,17 +14,19 @@ $( document ).ready(function() {
 
 		// assign a function to the + button
 		elem[i].children[4].children[0].onclick 
-		  = function(){add1(elem[i]);};
+		  = function(){add1(this);};
 	}
 
 	// create an "add1" function
 	function add1 (el) {
-	  if(el.children[2].innerHTML == "-") 
-		el.children[2].innerHTML = "1";
+	  var ord = el.attr("ord");
+	  var tr = document.getElementById(i+1)
+	  if(tr.children[2].innerHTML == "-") 
+		tr.children[2].innerHTML = "1";
 	  else {
-		let currentScore = el.children[2].innerHTML;
+		let currentScore = tr.children[2].innerHTML;
 		currentScore = Number.parseInt(currentScore);
-		el.children[2].innerHTML = currentScore + 1;
+		tr.children[2].innerHTML = currentScore + 1;
 	  }
 	}
 });
