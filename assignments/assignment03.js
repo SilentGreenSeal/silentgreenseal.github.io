@@ -3,7 +3,7 @@ $( document ).ready(function() {
 	let elem = [];
 	for(var i=1;i++;i<=18){
 	// assign the entire table row for hole 1 to a variable, elem
-	elem[i]
+	elem[i-1]
 	  = document.getElementById(i);
 
 	// display the number of children (all td elements)
@@ -12,7 +12,7 @@ $( document ).ready(function() {
 	// console.log(elem.children[4].children[0]); 
 
 	// assign a function to the + button
-	elem[i].children[4].children[0].onclick 
+	elem[i-1].children[4].children[0].onclick 
 	  = function(){add1(elem[1]);};
 	}
 
