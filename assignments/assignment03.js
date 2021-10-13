@@ -110,7 +110,7 @@ $(document).ready(function(){
 		elem.children[2].innerHTML = currentScore + 1;
 	  }
 	}
-	
+	/*
 	function subtract1 (elem) {
 	  if(elem.children[2].innerHTML == 1)
 		  elem.children[2].innerHTML = "-";
@@ -212,3 +212,5 @@ $(document).ready(function(){
 	  = function(){subtract1(elem[18]);};
 	  
 });
+*/
+}
