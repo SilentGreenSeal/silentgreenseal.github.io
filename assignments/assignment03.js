@@ -120,7 +120,7 @@ $(document).ready(function(){
 	  = document.getElementById("18");
 	elem[18].children[4].children[0].onclick 
 	  = function(){subtract1(elem[18]);};
-	  
+	  */
 });
-*/
-}
+
+
