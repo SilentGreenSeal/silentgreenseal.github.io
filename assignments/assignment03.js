@@ -1,5 +1,5 @@
 
-$(document).ready function(){
+$(document).ready(function(){
 	let elem = [];
 	// assign the entire table row for hole 1 to a variable, elem
 	
