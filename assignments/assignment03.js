@@ -29,7 +29,12 @@ function add1 (elem) {
   }
 }
 
-	/*
+for(let i=1; i<=18; i++) {
+  // console.log(i);
+  elem[i] = document.getElementById(i.toString());
+  elem[i].children[4].children[1].onclick = function(){subtract1(elem[i]);};
+}
+	
 	function subtract1 (elem) {
 	  if(elem.children[2].innerHTML == 1)
 		  elem.children[2].innerHTML = "-";
@@ -39,7 +44,7 @@ function add1 (elem) {
 		elem.children[2].innerHTML = currentScore - 1;
 	  }
 	}
-	
+	/*
 	elem[1]
 	  = document.getElementById("1");
 	elem[1].children[4].children[0].onclick 
