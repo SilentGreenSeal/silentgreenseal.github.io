@@ -27,6 +27,7 @@ function add1 (elem) {
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore + 1;
   }
+  overPar(elem);
 }
 
 for(let i=1; i<=18; i++) {
@@ -43,7 +44,23 @@ for(let i=1; i<=18; i++) {
 		currentScore = Number.parseInt(currentScore);
 		elem.children[2].innerHTML = currentScore - 1;
 	  }
+	  overPar(elem);
 	}
+	
+	function overPar (elem) {
+		if(elem.children[2].innerHTML = "-")
+			elem.children[3].innerHTML = "-";
+		else {
+			let currentScore = elem.children[2].innerHTML;
+			let par = elem.children[1].innerHTML;
+			currentScore = Number.parseInt(currentScore);
+			par = Number.parseInt(par);
+			let over = currentScore - par;
+			elem.children[3].innerHTML = over;
+		}
+	}
+	
+	
 	/*
 	elem[1]
 	  = document.getElementById("1");
