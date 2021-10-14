@@ -94,6 +94,9 @@ for(let i=1; i<=18; i++) {
 	function clearHole (elem) {
 		if(elem.children[2].innerHTML != "-")
 			elem.children[2].innerHTML = "-";
+		
+		if(elem.children[3].innerHTML != "-")
+			elem.children[3].innerHTML = "-";
 	}
 	
 	for(let i=1; i<=18; i++) {
