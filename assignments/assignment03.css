@@ -1,3 +1,3 @@
 /* center-align table columns */
 td {text-align: center;} 
-th {text-align: center; margin-left:50px}
+th {text-align: center; position: relative;}
