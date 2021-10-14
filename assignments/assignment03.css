@@ -1,3 +1,9 @@
 /* center-align table columns */
 td {text-align: center;} 
 th {text-align: center;}
+
+.clear, #clearAll {
+	background-color: lightgray;
+	text-align: center;
+	
+}
