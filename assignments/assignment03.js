@@ -120,6 +120,7 @@ for(let i=1; i<=18; i++) {
 		}
 		
 		document.getElementById("scoreTotal").innerHTML = "-";
+		document.getElementById("overTotal").innerHTML = "-";
 	}
 	document.getElementById("clearAll").onclick = function(){clearAll()};
 	/*
