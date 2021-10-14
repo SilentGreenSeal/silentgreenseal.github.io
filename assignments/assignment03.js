@@ -14,7 +14,7 @@ $(document).ready(function(){
 
 let totalPar=0
 for(let i=1; i<=18; i++) {
-	let par = elem.children[1].innerHTML;
+	let par = document.getElementById(i.toString()).children[1].innerHTML;
 	par = Number.parseInt(par);
 	totalPar += par;
 	document.getElementById("totals").parTotal.innerHTML = totalPar.toString();
@@ -75,7 +75,7 @@ for(let i=1; i<=18; i++) {
 			else 
 				over = Number.parseInt(over);
 			totalOver += over;
-			document.getElementById("totals").overTotal.innerHTML = totalOver.toString();
+			document.getElementById("overTotal").innerHTML = totalOver.toString();
 		}
 		
 		let totalScore = 0;
@@ -87,7 +87,7 @@ for(let i=1; i<=18; i++) {
 			else 
 				score = Number.parseInt(score);
 			totalScore += score;
-			document.getElementById("totals").scoreTotal.innerHTML = totalScore.toString();
+			document.getElementById("scoreTotal").innerHTML = totalScore.toString();
 		}
 	}
 	
