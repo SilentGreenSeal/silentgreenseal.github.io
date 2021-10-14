@@ -48,7 +48,7 @@ for(let i=1; i<=18; i++) {
 	}
 	
 	function overPar (elem) {
-		if(elem.children[2].innerHTML = "-")
+		if(elem.children[2].innerHTML == "-")
 			elem.children[3].innerHTML = "-";
 		else {
 			let currentScore = elem.children[2].innerHTML;
