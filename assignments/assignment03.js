@@ -69,7 +69,7 @@ for(let i=1; i<=18; i++) {
 		let totalOver = 0;
 		
 		for (let i=1; i<=18; i++) {
-			let over = elem.children[3].innerHTML;
+			let over = document.getElementById(i.toString()).children[3].innerHTML;
 			if(over == "-")
 				over = 0;
 			else 
@@ -81,7 +81,7 @@ for(let i=1; i<=18; i++) {
 		let totalScore = 0;
 		
 		for (let i=1; i<=18; i++) {
-			let score = elem.children[2].innerHTML;
+			let score = document.getElementById(i.toString()).children[2].innerHTML;
 			if(score == "-")
 				score = 0;
 			else 
