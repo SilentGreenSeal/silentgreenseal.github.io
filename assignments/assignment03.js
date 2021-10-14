@@ -6,7 +6,7 @@ $(document).ready(function(){
 	for (var i=1;i>=18;i++) {
 		elem[i]
 			= document.getElementById(i);
-		elem[1].children[4].children[0].onclick 
+		elem[i].children[4].children[0].onclick 
 			= function(){add1(i.toString());};
 	}
 
