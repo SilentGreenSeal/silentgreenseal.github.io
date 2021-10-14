@@ -17,7 +17,7 @@ for(let i=1; i<=18; i++) {
 	let par = document.getElementById(i.toString()).children[1].innerHTML;
 	par = Number.parseInt(par);
 	totalPar += par;
-	document.getElementById("totals").parTotal.innerHTML = totalPar.toString();
+	document.getElementById("parTotal").innerHTML = totalPar.toString();
 }
 
 for(let i=1; i<=18; i++) {
