@@ -67,7 +67,7 @@ for(let i=1; i<=18; i++) {
 			else 
 				over = Number.parseInt(over);
 			totalOver += over;
-			elem[19].children[3].innerHTML = totalOver;
+			document.getElementById("19").children[3].innerHTML = totalOver;
 		}
 	}
 	
