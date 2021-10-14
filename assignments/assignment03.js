@@ -3,7 +3,7 @@ $(document).ready(function(){
 	let elem = [];
 	// assign the entire table row for hole 1 to a variable, elem
 	
-	for (var i=1;i>=18;i++) {
+	for (var i=1;i<=18;i++) {
 		elem[i]
 			= document.getElementById(i.toString());
 		elem[i].children[4].children[0].onclick 
