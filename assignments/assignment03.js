@@ -113,7 +113,7 @@ for(let i=1; i<=18; i++) {
 	elem[i].children[5].children[0].onclick = function(){clearHole(elem[i]);};
 	}
 	
-	function clearAll {
+	function clearAll() {
 		
 		for(let i=1; i<=18; i++) {
 		// console.log(i);
