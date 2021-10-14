@@ -91,6 +91,22 @@ for(let i=1; i<=18; i++) {
 		}
 	}
 	
+	function clearHole (elem) {
+		if(elem.children[2].innerHTML != "-")
+			elem.children[2].innerHTML = "-";
+	}
+	
+	for(let i=1; i<=18; i++) {
+	// console.log(i);
+	elem[i] = document.getElementById(i.toString());
+	elem[i].children[5].children[0].onclick = function(){clearHole(elem[i]);};
+	}
+	
+	for(let i=1; i<=18; i++) {
+	// console.log(i);
+	// elem[i] = document.getElementById(i.toString());
+	document.getElementById("clearAll").onclick = function(){clearHole(elem[i]);};
+	}
 	
 	/*
 	elem[1]
