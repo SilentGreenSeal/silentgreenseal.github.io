@@ -114,13 +114,12 @@ for(let i=1; i<=18; i++) {
 	}
 	
 	function clearAll() {
-		
 		for(let i=1; i<=18; i++) {
 		// console.log(i);
-		// elem[i] = document.getElementById(i.toString());
 		clearHole(elem[i]);
-		
 		}
+		
+		document.getElementById("scoreTotal").innerHTML = "-";
 	}
 	document.getElementById("clearAll").onclick = function(){clearAll()};
 	/*
