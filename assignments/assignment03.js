@@ -95,7 +95,7 @@ for(let i=1; i<=18; i++) {
 		if(elem.children[2].innerHTML != "-")
 			elem.children[2].innerHTML = "-";
 		else {
-			let score = document.getElementById(i.toString()).children[2].innerHTML;
+			let score = elem.children[2].innerHTML;
 			score = Number.parseInt(score);
 			let getScoreTotal = document.getElementById("scoreTotal").innerHTML;
 			getScoreTotal = Number.parseInt(getScoreTotal);
