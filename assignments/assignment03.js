@@ -101,6 +101,7 @@ for(let i=1; i<=18; i++) {
 			getScoreTotal = Number.parseInt(getScoreTotal);
 			let newScore = getScoreTotal-score;
 			document.getElementById("scoreTotal").innerHTML = newScore.toString();
+		}
 		
 		if(elem.children[3].innerHTML != "-")
 			elem.children[3].innerHTML = "-";
@@ -112,12 +113,16 @@ for(let i=1; i<=18; i++) {
 	elem[i].children[5].children[0].onclick = function(){clearHole(elem[i]);};
 	}
 	
-	for(let i=1; i<=18; i++) {
-	// console.log(i);
-	// elem[i] = document.getElementById(i.toString());
-	document.getElementById("clearAll").onclick = function(){clearHole(elem[i]);};
+	function clearAll {
+		
+		for(let i=1; i<=18; i++) {
+		// console.log(i);
+		// elem[i] = document.getElementById(i.toString());
+		clearHole(elem[i]);
+		
+		}
 	}
-	
+	document.getElementById("clearAll").onclick = function(){clearAll()};
 	/*
 	elem[1]
 	  = document.getElementById("1");
