@@ -58,6 +58,17 @@ for(let i=1; i<=18; i++) {
 			let over = currentScore - par;
 			elem.children[3].innerHTML = over;
 		}
+		let totalOver = 0;
+		
+		for (i=1; i<=18; i++) {
+			let over = elem.children[3].innerHTML;
+			if(over == "-")
+				over = 0;
+			else 
+				over = Number.parseInt(over);
+			totalOver += over;
+			elem[19].children[3].innerHTML = totalOver;
+		}
 	}
 	
 	
