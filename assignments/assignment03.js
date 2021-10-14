@@ -102,6 +102,7 @@ for(let i=1; i<=18; i++) {
 			let newScore = getScoreTotal-score;
 			document.getElementById("scoreTotal").innerHTML = newScore.toString();
 		}
+		overPar(elem);
 		
 		if(elem.children[3].innerHTML != "-")
 			elem.children[3].innerHTML = "-";
