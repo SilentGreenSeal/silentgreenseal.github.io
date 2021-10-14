@@ -94,6 +94,13 @@ for(let i=1; i<=18; i++) {
 	function clearHole (elem) {
 		if(elem.children[2].innerHTML != "-")
 			elem.children[2].innerHTML = "-";
+		else {
+			let score = document.getElementById(i.toString()).children[2].innerHTML;
+			score = Number.parseInt(score);
+			let getScoreTotal = document.getElementById("scoreTotal").innerHTML;
+			getScoreTotal = Number.parseInt(getScoreTotal);
+			let newScore = getScoreTotal-score;
+			document.getElementById("scoreTotal").innerHTML = newScore.toString();
 		
 		if(elem.children[3].innerHTML != "-")
 			elem.children[3].innerHTML = "-";
