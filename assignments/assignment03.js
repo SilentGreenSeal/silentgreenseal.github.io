@@ -12,6 +12,14 @@ $(document).ready(function(){
 // assign a function to the + button
 // elem[1].children[4].children[0].onclick = function(){add1(elem[1]);};
 
+let totalPar=0
+for(let i=1; i<=18; i++) {
+	let par = elem.children[3].innerHTML;
+	par = Number.parseInt(par);
+	totalPar += par;
+	document.getElementById("totals").parTotal.innerHTML = totalPar.toString();
+}
+
 for(let i=1; i<=18; i++) {
   // console.log(i);
   elem[i] = document.getElementById(i.toString());
@@ -60,14 +68,26 @@ for(let i=1; i<=18; i++) {
 		}
 		let totalOver = 0;
 		
-		for (i=1; i<=18; i++) {
+		for (let i=1; i<=18; i++) {
 			let over = elem.children[3].innerHTML;
 			if(over == "-")
 				over = 0;
 			else 
 				over = Number.parseInt(over);
 			totalOver += over;
-			document.getElementById("19").children[3].innerHTML = totalOver;
+			document.getElementById("totals").overTotal.innerHTML = totalOver.toString();
+		}
+		
+		let totalScore = 0;
+		
+		for (let i=1; i<=18; i++) {
+			let score = elem.children[2].innerHTML;
+			if(score == "-")
+				score = 0;
+			else 
+				score = Number.parseInt(score);
+			totalScore += score;
+			document.getElementById("totals").scoreTotal.innerHTML = totalScore.toString();
 		}
 	}
 	
