@@ -140,8 +140,7 @@ function addClub(newClub="") {
 	}
 		
 	debugger;
-	let arrNewClub = [(clubs[clubs.length-1][0]) + 100, clubAbbr, newClub, 0, 0, 0, 0, deg, mType, fType];
-	clubs.concat(arrNewClub);
+	clubs.push([(clubs[clubs.length-1][0]) + 100, clubAbbr, newClub, 0, 0, 0, 0, deg, mType, fType]);
 	let str = JSON.stringify(clubs);
 	localStorage.setItem("clubs", str);
 	window.location.href = "clubDistanceList.html"; 
