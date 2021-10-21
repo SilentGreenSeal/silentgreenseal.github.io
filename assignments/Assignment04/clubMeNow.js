@@ -98,7 +98,7 @@ function undoLastShot() {
 	}
 	localStorage.setItem("clubs", cu);
 	
-	appendTableRows();
+	window.location.href = "clubDistanceList.html"; 
 }
 
 // create a new (default) "clubs" array
