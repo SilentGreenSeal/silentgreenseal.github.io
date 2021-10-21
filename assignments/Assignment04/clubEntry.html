@@ -144,6 +144,9 @@ function addClub(newClub="") {
 	let str = JSON.stringify(clubs);
 	localStorage.setItem("clubs", str);
 	window.location.href = "clubDistanceList.html"; 
+	
+	if (clubs.length > 14)
+	window.alert("Warning: you are only allowed to carry 14 clubs in your golf bag in match play competition.");
 }
 	
 	// navigate to club distance LIST screen
