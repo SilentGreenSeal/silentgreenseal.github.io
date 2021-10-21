@@ -97,6 +97,9 @@ function undoLastShot() {
 		cu = JSON.parse(localStorage.getItem("clubsUndo"));
 	}
 	localStorage.setItem("clubs", cu);
+	
+	loadClubDistances();
+	appendTableRows();
 }
 
 // create a new (default) "clubs" array
