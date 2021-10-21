@@ -234,7 +234,7 @@ function addClub(newClub="") {
 	}
 		
 	debugger;
-	let arrNewClub = [(clubs[clubs.length-1][0]) + 100, clubAbbr, newClub, 0, 0, 0, 0, deg, mType, fType]
+	let arrNewClub = [(clubs[clubs.length-1][0]) + 100, clubAbbr, newClub, 0, 0, 0, 0, deg, mType, fType];
 	clubs.concat(arrNewClub);
 	let str = JSON.stringify(clubs);
 	localStorage.setItem("clubs", str);
