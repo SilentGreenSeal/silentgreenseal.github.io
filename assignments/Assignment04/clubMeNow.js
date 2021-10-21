@@ -98,7 +98,6 @@ function undoLastShot() {
 	}
 	localStorage.setItem("clubs", cu);
 	
-	loadClubDistances();
 	appendTableRows();
 }
 
