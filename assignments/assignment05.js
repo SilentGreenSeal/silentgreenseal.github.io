@@ -15,6 +15,9 @@ var xhttp;
 
 // modified from : https://www.sitepoint.com/introduction-chart-js-2-0-six-examples/
 // "ctx" is the canvas HTML element where the chart is rendered in the browser
+var dayjs = require('dayjs')
+//import dayjs from 'dayjs'
+dayjs().format();
 var ctx = 
   document.getElementById('myChart').getContext('2d');
 // "chartData" includes the graph AND the formatting, including title, legend, axes, etc.
@@ -108,7 +111,7 @@ function loadContent() {
         = newConfirmedOver1000.map( 
           (x) => x.NewDeaths );
       chartData.options.title.text 
-        = "Covid 19 Hotspots" ;
+        = "Covid 19 Hotspots"+ dayjs;
       myChart = new Chart(ctx, chartData); 
 
     } // end if
