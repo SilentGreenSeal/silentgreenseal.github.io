@@ -18,7 +18,7 @@ var xhttp;
 //var dayjs = require('dayjs')
 //import dayjs from 'dayjs'
 //dayjs().format();
-var today = dayjs().format();
+var today = dayjs().format("YYYY-MM-DD");
 var ctx = 
   document.getElementById('myChart').getContext('2d');
 // "chartData" includes the graph AND the formatting, including title, legend, axes, etc.
@@ -112,7 +112,7 @@ function loadContent() {
         = newConfirmedOver1000.map( 
           (x) => x.NewDeaths );
       chartData.options.title.text 
-        = "Covid 19 Hotspots"+ today;
+        = "Covid 19 Hotspots "+ today;
       myChart = new Chart(ctx, chartData); 
 
     } // end if
