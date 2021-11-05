@@ -114,12 +114,13 @@ function loadContent() {
       chartData.options.title.text 
         = "Covid 19 Hotspots "+ today;
       myChart = new Chart(ctx, chartData); 
+  
+	  loadArray();
 
     } // end if
     
   }; // end xhttp.onreadystatechange = function()
   
-  loadArray();
   xhttp.open("GET", URL, true);
   xhttp.send();
   
