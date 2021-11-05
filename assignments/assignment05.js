@@ -119,6 +119,7 @@ function loadContent() {
     
   }; // end xhttp.onreadystatechange = function()
   
+  loadArray();
   xhttp.open("GET", URL, true);
   xhttp.send();
   
@@ -232,22 +233,24 @@ var populations = {
 // new array 
 // loop through all covidJsObj.Countries[i] 
 // push all info i need
-var newArray = [] 
-for (let i=0; i<covidJsObj.Countries.length; i++) {
-	var toFind = covidJsObj.Countries[i].Slug;
-	for (var j = 0, len = populations.length; j < len; j++) {
-		if (populations[j][0].toLowerCase() === toFind.toLowerCase()) {
-			break;
+function loadArray() {
+	var newArray = [] 
+	for (let i=0; i<covidJsObj.Countries.length; i++) {
+		var toFind = covidJsObj.Countries[i].Slug;
+		for (var j = 0, len = populations.length; j < len; j++) {
+			if (populations[j][0].toLowerCase() === toFind.toLowerCase()) {
+				break;
+			}
 		}
-	}
-	var pop = object[j][1];
-	var td = covidJsObj.Countries[i].TotalDeaths;
-  newArray.push({
-    "Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
-    "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
-    "TotalDeaths": td,
-	"Population": pop,
-	"TotalConfirmedPer100000": (td/pop)*100000
+		var pop = object[j][1];
+		var td = covidJsObj.Countries[i].TotalDeaths;
+	newArray.push({
+		"Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
+		"TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
+		"TotalDeaths": td,
+		"Population": pop,
+		"TotalConfirmedPer100000": (td/pop)*100000
   })
+}
   
 }
