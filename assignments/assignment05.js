@@ -15,7 +15,6 @@ var xhttp;
 
 // modified from : https://www.sitepoint.com/introduction-chart-js-2-0-six-examples/
 // "ctx" is the canvas HTML element where the chart is rendered in the browser
-var dayjs = require('dayjs')
 //import dayjs from 'dayjs'
 dayjs().format();
 var today = dayjs();
