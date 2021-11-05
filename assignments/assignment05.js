@@ -234,10 +234,19 @@ var populations = {
 // push all info i need
 var newArray = [] 
 for (let i=0; i<covidJsObj.Countries.length; i++) {
+	var toFind = covidJsObj.Countries[i].Slug;
+	for (var j = 0, len = populations.length; j < len; j++) {
+		if (populations[j][0].toLowerCase() === toFind.toLowerCase()) {
+			break;
+		}
+	}
+	var pop = object[j][1];
   newArray.push({
     "Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
-    "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed
-    // continue here...
+    "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
+    "TotalDeaths": covidJsObj.Countries[i].TotalDeaths,
+	"Population": pop,
+	"TotalConfirmedPer100000": (totalDeaths/pop)*100000
   })
   
 }
