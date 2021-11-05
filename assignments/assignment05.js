@@ -240,12 +240,13 @@ for (let i=0; i<covidJsObj.Countries.length; i++) {
 		}
 	}
 	var pop = object[j][1];
+	var td = covidJsObj.Countries[i].TotalDeaths;
   newArray.push({
     "Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
     "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
-    "TotalDeaths": covidJsObj.Countries[i].TotalDeaths,
+    "TotalDeaths": td,
 	"Population": pop,
-	"TotalConfirmedPer100000": (totalDeaths/pop)*100000
+	"TotalConfirmedPer100000": (td/pop)*100000
   })
   
 }
