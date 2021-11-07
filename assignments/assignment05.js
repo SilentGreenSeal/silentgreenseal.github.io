@@ -84,17 +84,6 @@ function loadContent() {
       covidJsObj = JSON.parse(covidJson);
       newConfirmedOver1000 = [];
       
-	    for (let c of covidJsObj.Countries) {
-        if (c.NewConfirmed > 5000) {
-          newConfirmedOver1000.push({ 
-            "Slug": c.Slug, 
-            "NewConfirmed": c.NewConfirmed, 
-            "NewDeaths": c.NewDeaths
-          });
-        }
-      }
-      newConfirmedOver1000 = _.orderBy(newConfirmedOver1000, "NewDeaths", "desc");
-	  
 	  loadArray();
 	  newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc");
 
@@ -237,25 +226,28 @@ populations.push({name:'switzerland',pop:8632703});
 // push all info i need
 function loadArray() {
 	for (let i=0; i<covidJsObj.Countries.length; i++) {
-		var toFind = covidJsObj.Countries[i].Slug;
-		var j = 0;
-		var found = 0;
-		for (j = 0, len = populations.length; j < len; j++) {
-			if (populations[j].name.toLowerCase() === toFind.toLowerCase()) {
-				found = 1;
-				break;
+		var td = covidJsObj.Countries[i].TotalDeaths;
+		if (td >= 50000) {
+			var toFind = covidJsObj.Countries[i].Slug;
+			var j = 0;
+			var found = 0;
+			for (j = 0, len = populations.length; j < len; j++) {
+				if (populations[j].name.toLowerCase() === toFind.toLowerCase()) {
+					found = 1;
+					break;
+				}
 			}
-		}
-		if (found == 1) {
-			var pop = populations[j].pop;
-			var td = covidJsObj.Countries[i].TotalDeaths;
-			newArray.push({
-				"Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
-				"TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
-				"TotalDeaths": td,
-				"Population": pop,
-				"TotalConfirmedPer100000": (td/pop)*100000
-			});
+			if (found == 1) {
+				var pop = populations[j].pop;
+			
+				newArray.push({
+					"Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
+					"TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
+					"TotalDeaths": td,
+					"Population": pop,
+					"TotalConfirmedPer100000": (td/pop)*100000
+				});
+			}
 		}
 		
 	}
