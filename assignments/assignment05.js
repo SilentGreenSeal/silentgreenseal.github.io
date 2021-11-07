@@ -92,7 +92,7 @@ function loadContent() {
   
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-    if (newDate > yesterday) {
+    if (newDate < yesterday) {
 		if (this.readyState == 4 
 			&& this.status == 200) {
       
