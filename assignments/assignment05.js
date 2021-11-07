@@ -88,7 +88,7 @@ function loadContent() {
   } else {
 	newDate = new Date("2000-01-01");
   }
-  var yesterday = Date.now() - day;
+  
   var timeStamp = Math.round(new Date().getTime() / 1000);
   var timeStampYesterday = timeStamp - (24 * 3600);
   var yesterday = new Date(timeStampYesterday*1000).getTime();
