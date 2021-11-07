@@ -94,6 +94,7 @@ function loadContent() {
         }
       }
       newConfirmedOver1000 = _.orderBy(newConfirmedOver1000, "NewDeaths", "desc");
+	  var newArray = [];
 	  loadArray();
 	  newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc");
 
@@ -235,7 +236,6 @@ populations.push({name:'switzerland',pop:8632703});
 // loop through all covidJsObj.Countries[i] 
 // push all info i need
 function loadArray() {
-	var newArray = [] 
 	for (let i=0; i<covidJsObj.Countries.length; i++) {
 		var toFind = covidJsObj.Countries[i].Slug;
 		var j = 0;
