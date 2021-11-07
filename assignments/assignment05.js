@@ -7,6 +7,7 @@ var URL = "https://api.covid19api.com/summary";
 var covidJson;
 var covidJsObj;
 var newConfirmedOver1000;
+var lastCalled;
 
 // AJAX variable
 var xhttp;
@@ -78,19 +79,34 @@ var chartData = {
 // code below modified from: 
 // https://www.w3schools.com/js/js_ajax_intro.asp
 
+const day = 1000 * 60 * 60 *24;
+    
 function loadContent() {
+  var newDate;
+  if (localStorage.getItem("todaysDate")) {
+	newDate = localStorage.getItem("todaysDate");
+  } else {
+	newDate = ("2000-01-01");
+  }
+  var yesterday = Date.now() - day;
+  
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 
-        && this.status == 200) {
+    if (newDate > yesterday) {
+		if (this.readyState == 4 
+			&& this.status == 200) {
       
-      covidJson = this.responseText;
-      covidJsObj = JSON.parse(covidJson);
-      newConfirmedOver1000 = [];
+		covidJson = this.responseText;
+		covidJsObj = JSON.parse(covidJson);
+		newConfirmedOver1000 = [];
       
-	  loadArray();
-	  newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc");
-
+		loadArray();
+		newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc");
+		localStorage.setItem("localCovidData", newArray);
+		localStorage.setItem("todaysDate", today);
+		} else {
+			newArray = localStorage.getItem("localCovidData");
+		}
       chartData.data.datasets[0].backgroundColor 
         = "rgba(100,100,100,0.4)"; // gray
       chartData.data.datasets[1].backgroundColor 
