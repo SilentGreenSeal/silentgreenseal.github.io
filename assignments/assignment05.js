@@ -57,10 +57,10 @@ var chartData = {
                     || label/1000 == 0.1 
                     || label/1000 == 0.01) 
               ? label/1000+'k' :  "";
-          }
+          },
+		  stepSize:10
         },
         scaleLabel: {
-			scaleStepWidth:10,
           display: true,
           labelString: '1k = 1000'
         },
