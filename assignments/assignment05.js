@@ -91,10 +91,11 @@ function loadContent() {
   var yesterday = Date.now() - day;
   var timeStamp = Math.round(new Date().getTime() / 1000);
   var timeStampYesterday = timeStamp - (24 * 3600);
+  var yesterday = new Date(timeStampYesterday*1000).getTime();
   
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-    if (newDate <= new Date(timeStampYesterday*1000).getTime()) {
+    if (newDate <= yesterday) {
 		if (this.readyState == 4 
 			&& this.status == 200) {
       
