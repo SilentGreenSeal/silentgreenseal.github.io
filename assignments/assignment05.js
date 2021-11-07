@@ -106,12 +106,13 @@ function loadContent() {
 		  
 			loadArray();
 			newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc");
-			localStorage.setItem("localCovidData", newArray);
+			let str = JSON.stringify(newArray);
+			localStorage.setItem("localCovidData", str);
 			localStorage.setItem("todaysDate", today);
 		} 
 		else 
 		{
-			newArray = localStorage.getItem("localCovidData");
+			newArray = JSON.parse(localStorage.getItem("localCovidData"));
 		}
       chartData.data.datasets[0].backgroundColor 
         = "rgba(100,100,100,0.4)"; // gray
