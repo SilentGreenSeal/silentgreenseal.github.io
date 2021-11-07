@@ -58,7 +58,7 @@ var chartData = {
                     || label/1000 == 0.01) 
               ? label/1000+'k' :  "";
           },
-		  stepSize:10
+		  stepSize:10000
         },
         scaleLabel: {
           display: true,
