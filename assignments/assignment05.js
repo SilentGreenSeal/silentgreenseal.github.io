@@ -120,8 +120,6 @@ function loadContent() {
         = 'confirmed deaths';
 	  chartData.data.datasets[2].label  
         = 'deaths per 100000';
-      chartData.data.labels  
-        = newArray.map( (x) => x.Slug );
       chartData.data.datasets[0].data  
         = newArray.map( 
           (x) => x.TotalConfirmed );
