@@ -99,10 +99,13 @@ function loadContent() {
         = newArray.map( (x) => x.Slug );
       chartData.data.datasets[0].data  
         = newArray.map( 
-          (x) => x.NewConfirmed );
+          (x) => x.TotalConfirmed );
       chartData.data.datasets[1].data  
         = newArray.map( 
-          (x) => x.NewDeaths );
+          (x) => x.TotalDeaths );
+	  chartData.data.datasets[2].data
+	    = newArray.map(
+		  (x} => x.TotalConfirmedPer100000 );
       chartData.options.title.text 
         = "Covid 19 Hotspots "+ today;
       myChart = new Chart(ctx, chartData); 
