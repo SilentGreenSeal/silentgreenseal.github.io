@@ -13,8 +13,9 @@
 <body>
 <h2>Example Chart using Chart.js</h2>
 <div>
-	<canvas id="myChart"></canvas>
-	
+	<div class="float-left">
+		<canvas id="myChart" style="width:100%;height:100%"></canvas>
+	</div>
 	<div class="float-right">
 		<h1>Covid-19</h1>
 		<p>
@@ -25,9 +26,10 @@
 	</div>
 </div>
 
-<h2>Example AJAX call to Covid19api</h2>
-<button type="button" onclick="loadContent()">Load Covid-19 Content</button>
-
+<div style="clear:both">
+	<h2>Example AJAX call to Covid19api</h2>
+	<button type="button" onclick="loadContent()">Load Covid-19 Content</button>
+</div>
 
 <!-- ChartJS: https://www.chartjs.org/ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
