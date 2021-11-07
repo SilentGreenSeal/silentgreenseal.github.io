@@ -84,9 +84,9 @@ const day = 1000 * 60 * 60 *24;
 function loadContent() {
   var newDate;
   if (localStorage.getItem("todaysDate")) {
-	newDate = localStorage.getItem("todaysDate");
+	newDate = new Date(localStorage.getItem("todaysDate"));
   } else {
-	newDate = ("2000-01-01");
+	newDate = new Date("2000-01-01");
   }
   var yesterday = Date.now() - day;
   var timeStamp = Math.round(new Date().getTime() / 1000);
