@@ -243,7 +243,7 @@ function loadArray() {
 				break;
 			}
 		}
-		var pop = populations[j][1];
+		var pop = populations[j].pop;
 		var td = covidJsObj.Countries[i].TotalDeaths;
 	newArray.push({
 		"Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
