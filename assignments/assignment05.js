@@ -89,10 +89,12 @@ function loadContent() {
 	newDate = ("2000-01-01");
   }
   var yesterday = Date.now() - day;
+  var timeStamp = Math.round(new Date().getTime() / 1000);
+  var timeStampYesterday = timeStamp - (24 * 3600);
   
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-    if (newDate < yesterday) {
+    if (newDate <= new Date(timeStampYesterday*1000).getTime()) {
 		if (this.readyState == 4 
 			&& this.status == 200) {
       
