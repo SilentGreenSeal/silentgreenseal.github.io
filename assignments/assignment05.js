@@ -60,6 +60,7 @@ var chartData = {
           }
         },
         scaleLabel: {
+			scaleStepWidth:10,
           display: true,
           labelString: '1k = 1000'
         },
