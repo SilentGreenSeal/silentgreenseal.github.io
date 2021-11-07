@@ -238,20 +238,26 @@ function loadArray() {
 	var newArray = [] 
 	for (let i=0; i<covidJsObj.Countries.length; i++) {
 		var toFind = covidJsObj.Countries[i].Slug;
-		for (var j = 0, len = populations.length; j < len; j++) {
+		var j = 0;
+		var found = 0;
+		for (j = 0, len = populations.length; j < len; j++) {
 			if (populations[j].name.toLowerCase() === toFind.toLowerCase()) {
+				found = 1;
 				break;
 			}
 		}
-		var pop = populations[j].pop;
-		var td = covidJsObj.Countries[i].TotalDeaths;
-	newArray.push({
-		"Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
-		"TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
-		"TotalDeaths": td,
-		"Population": pop,
-		"TotalConfirmedPer100000": (td/pop)*100000
-	});
-}
+		if (found == 1) {
+			var pop = populations[j].pop;
+			var td = covidJsObj.Countries[i].TotalDeaths;
+			newArray.push({
+				"Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
+				"TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
+				"TotalDeaths": td,
+				"Population": pop,
+				"TotalConfirmedPer100000": (td/pop)*100000
+			});
+		}
+		
+	}
   
 }
