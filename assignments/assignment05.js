@@ -94,20 +94,23 @@ function loadContent() {
   var yesterday = new Date(timeStampYesterday*1000).getTime();
   
   xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (newDate <= yesterday) {
-		if (this.readyState == 4 
-			&& this.status == 200) {
-      
-		covidJson = this.responseText;
-		covidJsObj = JSON.parse(covidJson);
-		newConfirmedOver1000 = [];
-      
-		loadArray();
-		newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc");
-		localStorage.setItem("localCovidData", newArray);
-		localStorage.setItem("todaysDate", today);
-		} else {
+  xhttp.onreadystatechange = function() 
+  {
+	if (this.readyState == 4 && this.status == 200) 
+	{
+		if (newDate <= yesterday) 
+		{
+			covidJson = this.responseText;
+			covidJsObj = JSON.parse(covidJson);
+			newConfirmedOver1000 = [];
+		  
+			loadArray();
+			newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc");
+			localStorage.setItem("localCovidData", newArray);
+			localStorage.setItem("todaysDate", today);
+		} 
+		else 
+		{
 			newArray = localStorage.getItem("localCovidData");
 		}
       chartData.data.datasets[0].backgroundColor 
