@@ -34,6 +34,10 @@ var chartData = {
       label: 'oranges',
       data: [2, 29, 5, 5, 2, 3, 10],
       backgroundColor: "rgba(255,140,0,0.4)"
+    }, {
+      label: 'pears',
+      data: [2, 29, 5, 5, 2, 3, 10],
+      backgroundColor: "rgba(255,0,140,0.4)"
     }]
   },
   options: {
@@ -92,9 +96,11 @@ function loadContent() {
       chartData.data.datasets[1].backgroundColor 
         = "rgba(255,0,0,0.4)"; // red
       chartData.data.datasets[0].label  
-        = 'new cases';
+        = 'confirmed cases';
       chartData.data.datasets[1].label  
-        = 'new deaths';
+        = 'confirmed deaths';
+	  chartData.data.datasets[2].label  
+        = 'deaths per 100000';
       chartData.data.labels  
         = newArray.map( (x) => x.Slug );
       chartData.data.datasets[0].data  
