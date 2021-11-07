@@ -98,7 +98,8 @@ function loadContent() {
   {
 	if (this.readyState == 4 && this.status == 200) 
 	{
-		if (newDate <= yesterday) 
+		//if (newDate <= yesterday) 
+		if(1==1)
 		{
 			covidJson = this.responseText;
 			covidJsObj = JSON.parse(covidJson);
