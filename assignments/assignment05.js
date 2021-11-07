@@ -10,7 +10,7 @@ var newConfirmedOver1000;
 
 // AJAX variable
 var xhttp;
-
+var newArray = [];
 // Chart.js variables
 
 // modified from : https://www.sitepoint.com/introduction-chart-js-2-0-six-examples/
@@ -94,7 +94,7 @@ function loadContent() {
         }
       }
       newConfirmedOver1000 = _.orderBy(newConfirmedOver1000, "NewDeaths", "desc");
-	  var newArray = [];
+	  
 	  loadArray();
 	  newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc");
 
