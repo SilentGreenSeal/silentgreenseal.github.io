@@ -94,6 +94,8 @@ function loadContent() {
         }
       }
       newConfirmedOver1000 = _.orderBy(newConfirmedOver1000, "NewDeaths", "desc");
+	  loadArray();
+	  newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc");
 
       chartData.data.datasets[0].backgroundColor 
         = "rgba(100,100,100,0.4)"; // gray
@@ -104,19 +106,18 @@ function loadContent() {
       chartData.data.datasets[1].label  
         = 'new deaths';
       chartData.data.labels  
-        = newConfirmedOver1000.map( (x) => x.Slug );
+        = newArray.map( (x) => x.Slug );
       chartData.data.datasets[0].data  
-        = newConfirmedOver1000.map( 
+        = newArray.map( 
           (x) => x.NewConfirmed );
       chartData.data.datasets[1].data  
-        = newConfirmedOver1000.map( 
+        = newArray.map( 
           (x) => x.NewDeaths );
       chartData.options.title.text 
         = "Covid 19 Hotspots "+ today;
       myChart = new Chart(ctx, chartData); 
   
-	  loadArray();
-
+	  
     } // end if
     
   }; // end xhttp.onreadystatechange = function()
@@ -250,7 +251,7 @@ function loadArray() {
 		"TotalDeaths": td,
 		"Population": pop,
 		"TotalConfirmedPer100000": (td/pop)*100000
-  })
+	});
 }
   
 }
