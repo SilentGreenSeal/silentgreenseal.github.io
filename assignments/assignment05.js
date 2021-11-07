@@ -105,7 +105,7 @@ function loadContent() {
           (x) => x.TotalDeaths );
 	  chartData.data.datasets[2].data
 	    = newArray.map(
-		  (x} => x.TotalConfirmedPer100000 );
+		  (x) => x.TotalConfirmedPer100000 );
       chartData.options.title.text 
         = "Covid 19 Hotspots "+ today;
       myChart = new Chart(ctx, chartData); 
