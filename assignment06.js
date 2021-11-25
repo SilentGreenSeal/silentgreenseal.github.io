@@ -51,9 +51,9 @@ function loadDoc() {
   $("#loan_year01").blur( function() {
     updateLoansArrayYear();
   });
-  $("#loan_amount01").blur( function() {
-    updateLoansArrayAmount();
-  });
+  //$("#loan_amount01").blur( function() {
+    //updateLoansArrayAmount();
+  //});
   $("#loan_int01").blur( function() {
     updateLoansArrayInt();
   });
@@ -73,18 +73,18 @@ function updateLoansArrayYear() {
   }
 }
 
-function updateLoansArrayAmount() {
-	loans[0].loan_amount = parseInt($("#loan_amount01").val());
-	for(var i=1; i=5; i++) {
-		loans[i].loan_amount = loans[0].loan_amount + i;
-		$("#loan_amount0"+ (i+1) ).val(loans[i].loan_amount);
-	}
-}
+//function updateLoansArrayAmount() {
+	//loans[0].loan_amount = parseInt($("#loan_amount01").val());
+	//for(var i=1; i=5; i++) {
+		//loans[i].loan_amount = loans[0].loan_amount + i;
+		//$("#loan_amount0"+ (i+1) ).val(loans[i].loan_amount);
+	//}
+//}
 
 function updateLoansArrayInt() {
 	loans[0].loan_int_rate = parseInt($("#loan_int01").val());
 	for(var i=1; i=5; i++) {
-		loans[i].loan_int_rate = loans[0].loan_int_rate + i;
+		loans[i].loan_int_rate = loans[0].loan_int_rate;
 		$("#loan_int0"+ (i+1) ).val(loans[i].loan_int_rate);
 	}
 }
