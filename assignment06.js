@@ -82,7 +82,7 @@ function updateLoansArrayYear() {
 //}
 
 function updateLoansArrayInt() {
-	loans[0].loan_int_rate = parseInt($("#loan_int01").val());
+	loans[0].loan_int_rate = parseFloat($("#loan_int01").val());
 	for(var i=1; i<5; i++) {
 		loans[i].loan_int_rate = loans[0].loan_int_rate;
 		$("#loan_int0"+ (i+1) ).val(loans[i].loan_int_rate);
