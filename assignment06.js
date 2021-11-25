@@ -49,7 +49,13 @@ function loadDoc() {
   // set focus to first year: messes up codepen
   // $("#loan_year01").focus();
   $("#loan_year01").blur( function() {
-    updateLoansArray();
+    updateLoansArrayYear();
+  });
+  $("#loan_amount01").blur( function() {
+    updateLoansArrayAmount();
+  });
+  $("#loan_int01").blur( function() {
+    updateLoansArrayInt();
   });
   
 } // end: function loadDoc()
@@ -59,10 +65,26 @@ function toComma(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function updateLoansArray() {
+function updateLoansArrayYear() {
   loans[0].loan_year = parseInt($("#loan_year01").val());
   for(var i=1; i<5; i++) {
     loans[i].loan_year = loans[0].loan_year + i;
     $("#loan_year0"+ (i+1) ).val(loans[i].loan_year);
   }
+}
+
+function updateLoansArrayAmount() {
+	loans[0].loan_amount = parseInt($("#loan_amount01").val());
+	for(var i=1; i=5; i++) {
+		loans[i].loan_amount = loans[0].loan_amount + i;
+		$("#loan_amount0"+ (i+1) ).val(loans[i].loan_amount);
+	}
+}
+
+function updateLoansArrayInt() {
+	loans[0].loan_int_rate = parseInt($("#loan_int01").val());
+	for(var i=1; i=5; i++) {
+		loans[i].loan_int_rate = loans[0].loan_int_rate + i;
+		$("#loan_int0"+ (i+1) ).val(loans[i].loan_int_rate);
+	}
 }
