@@ -1,12 +1,19 @@
 // --- global variables ---
 
-var loans = [
+var loans; 
+
+if (localStorage.getItem("loans")) {
+	var cu = JSON.parse(localStorage.getItem("loans"));
+		loans = JSON.stringify(cu);
+  } else {
+	loans = [
   { loan_year: 2020, loan_amount: 10000.00, loan_int_rate: 0.0453 },
   { loan_year: 2021, loan_amount: 10000.00, loan_int_rate: 0.0453 },
   { loan_year: 2022, loan_amount: 10000.00, loan_int_rate: 0.0453 },
   { loan_year: 2023, loan_amount: 10000.00, loan_int_rate: 0.0453 },
   { loan_year: 2024, loan_amount: 10000.00, loan_int_rate: 0.0453 }
 ]; 
+  }
 
 // --- function: loadDoc() ---
 
@@ -59,7 +66,7 @@ function loadDoc() {
 			alert("Input not valid");
         }
 	}
-	
+	localStorage.setItem("loans", JSON.stringify(loans));
   });
   //$("#loan_amount01").blur( function() {
     //updateLoansArrayAmount();
@@ -76,6 +83,7 @@ function loadDoc() {
 			alert("Input not valid");
         }
 	}
+	localStorage.setItem("loans", JSON.stringify(loans));
   });
   
 } // end: function loadDoc()
