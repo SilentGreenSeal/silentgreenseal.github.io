@@ -49,13 +49,33 @@ function loadDoc() {
   // set focus to first year: messes up codepen
   // $("#loan_year01").focus();
   $("#loan_year01").blur( function() {
-    updateLoansArrayYear();
+    for(var i=0; i<5; i++) {
+		let boxValue = $("#loan_year0"+ (i+1)).val();
+		var numbers = /^[0-9]+$/;
+		if(boxValue.match(numbers))
+		{
+			updateLoansArrayYear();
+		}else{
+			alert("Input not valid");
+        }
+	}
+	
   });
   //$("#loan_amount01").blur( function() {
     //updateLoansArrayAmount();
   //});
   $("#loan_int01").blur( function() {
-    updateLoansArrayInt();
+    for(var i=0; i<5; i++) {
+		let boxValue = $("#loan_int0"+ (i+1)).val();
+		boxValue = boxValue.replace(",","");
+		var numbers = /^[0-9|.]+$/;
+		if(boxValue.match(numbers))
+		{
+			updateLoansArrayYear();
+		}else{
+			alert("Input not valid");
+        }
+	}
   });
   
 } // end: function loadDoc()
