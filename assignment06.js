@@ -71,7 +71,7 @@ function loadDoc() {
 		var numbers = /^[0-9|.]+$/;
 		if(boxValue.match(numbers))
 		{
-			updateLoansArrayYear();
+			updateLoansArrayInt();
 		}else{
 			alert("Input not valid");
         }
